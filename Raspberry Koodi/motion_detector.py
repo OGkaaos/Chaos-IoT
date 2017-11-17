@@ -1,13 +1,13 @@
-import os
-import RPi.GPIO as GPIO # Raspberry GPIO
-import time             # Ajanhallinta
-import requests         # Nettisivun selailua varten
-import picamera         # Raspberry kamera (PiCamera())
-import ftplib           # FTP Latausta varten
-import datetime         # Päivämäärän luontia varten
-import subprocess       # Remote-Terminal varten
-import threading        # Timer:iä varten
-from PIL import Image   # Jotta voidaan vaihtaa kuvan kokoa
+import os                           # Käyttöjärjestelmä
+import RPi.GPIO as GPIO             # Raspberry GPIO
+import time                         # Ajanhallinta
+import requests                     # Nettisivun selailua varten
+import picamera                     # Raspberry kamera (PiCamera())
+import ftplib                       # FTP Latausta varten
+import datetime                     # Päivämäärän luontia varten
+import subprocess                   # Remote-Terminal varten
+import threading                    # Timer:iä varten
+from PIL import Image               # Jotta voidaan vaihtaa kuvan kokoa
 from resizeimage import resizeimage # Jotta voidaan vaihtaa kuvan kokoa
 
 camera = picamera.PiCamera() # PiCamera
