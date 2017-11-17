@@ -3,7 +3,8 @@
 /* 
   @README
   tätä skriptiä ei käytetty lopullisessa projektissa mutta tämän idea olisi tulostaa käyttäjälle
-  raspberry:n CPU%, RAM% ja DISK Usage.
+  raspberry:n CPU%, RAM% ja DISK Usage ja tämä onnistuu samalla tavalla kuten Remote Terminal koodi on tehty 
+  (shell.php) ja muokkaamalla vähäsen Raspberry:n koodia..
 */
  require_once("../db.php"); /* tietokanta */
 
