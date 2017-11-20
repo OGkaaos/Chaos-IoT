@@ -49,16 +49,11 @@ try:
             # luodaan päivämäärä + kellonaika NYT
             date = datetime.datetime.now().strftime("%m-%d-%Y_%H%M%S")
             
-            #i = 0
-            #while os.path.exists("/home/pi/Desktop/motions/" + date + ".png"):
-            #    i += 1
-            #abc = i
-            
             # ottaa kuvan
-            camera.capture('/home/pi/Desktop/motions/' + date + '.png')
+            camera.capture('/home/pi/Desktop/havainnot/' + date + '.png')
 
             # tässä muutetaan kuvan kokoa jotta dashboard toimisi mahdollisimman nopeasti
-            fd_img = open('/home/pi/Desktop/motions/' + date + '.png', 'r')
+            fd_img = open('/home/pi/Desktop/havainnot/' + date + '.png', 'r')
             img = Image.open(fd_img)
             img = resizeimage.resize_cover(img, [480, 360])
             img.save('/home/pi/Desktop/havainnot/' + date + '.png', img.format)
@@ -68,15 +63,15 @@ try:
 
             # FTP Lataus
             session = ftplib.FTP('website.com','FTP KÄYTTÄJÄNIMI','FTP SALASANA') # FTP Tiedot
-            file = open('/home/pi/Desktop/motions/' + date + '.png', 'rb')                 
+            file = open('/home/pi/Desktop/havainnot/' + date + '.png', 'rb')                 
             session.storbinary('STOR ' + date + '.png', file)     
             file.close()                                   
             session.quit()
             
-            # skripti joka tallentaa tietokantaan ja myös ilmoittaa käyttäjille
+            # skripti joka tallentaa tietokantaan ja myös ilmoittaa käyttäjille jolla on kyseinen appkey ja &img=KUVAN PVM.png
             requests.get('https://marcosraudkett.com/mvrclabs/code/scripts/admin/script/service.php?app_key=APPKEY&img=' + date + '.png').content
             
-            os.remove('/home/pi/Desktop/motions/' + date + '.png')
+            os.remove('/home/pi/Desktop/havainnot/' + date + '.png')
         
         # odottaa 4 sek ennenkuin voi havaita uudelleen.
         time.sleep(4)
