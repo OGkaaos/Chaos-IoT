@@ -115,6 +115,9 @@ while ($row = mysql_fetch_assoc($get)) {
     $amount = $row["setting_amount"];
 }
 
+$current = mysql_query("SELECT * FROM notifications WHERE notification_appkey = '$app_key' AND notification_time BETWEEN '$currentday_mysqlfulldate_1' AND '$currentday_mysqlfulldate' ORDER BY notification_id DESC");
+$current_rows = mysql_num_rows($current);
+         
 while ($row = mysql_fetch_assoc($get)) {
     $id = $row["notification_id"];
     $time = $row["notification_time"];
