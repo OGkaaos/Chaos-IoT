@@ -1,3 +1,4 @@
+# tämän koodin voit luoda ilman koodin muokkailua: https://marcosraudkett.com/mvrclabs/code/scripts/admin/docs/?do=python-generator
 import os                           # Käyttöjärjestelmä
 import RPi.GPIO as GPIO             # Raspberry GPIO
 import time                         # Ajanhallinta
