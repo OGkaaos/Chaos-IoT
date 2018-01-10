@@ -37,6 +37,9 @@
     eli ei tarvitsis kirjoittaa jokaista päivää niinkun tässä scriptissä on tehty.
     Jos tekis sillai niin olisi mahdollista myös lisätä sivulle asetus josta voi vaihtaa aikaväliä esimerkiksi kun tämä
     skripti hetkellä toimii VAIN 6 edellisen päivän kanssa..
+    
+    funktiossa "tilastot" haetaan kaikki päivämäärät 2 päivämäärien välillä ja luodaan niistä array ja myös lasketaan 
+    kuinka monta niitä on ja sitten suoritetaan funktio niin montaa kertaa kun päivämääriä löytyy.
 */
 /* 
   esim $secondday -1 päivä nykyisestä eli jos nyt olisi maanantai niin haettais sunnuntaita.
